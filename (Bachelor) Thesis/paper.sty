@@ -1,0 +1,105 @@
+\ProvidesPackage{paper}
+
+%%% DEFINITIONS
+
+\newcommand{\MISSING}[1]
+{\textcolor{red}{#1}}
+
+\def
+\submitmonth{\MISSING{MONTH}\ }
+
+\def
+\papertitle{
+    {\LARGE\MakeUppercase{Bachelor Thesis}} 
+    \\[3em] 
+    \textbf{\huge \MISSING{TITLE}} 
+    \\[2em]
+}
+
+\def
+\authors{ 
+    \MISSING{NAME} \\ 
+    \MISSING{EMAIL} | \MISSING{...} \\
+    \MISSING{FIELD OF STUDY}
+}
+
+\def
+\journalname{\MakeUppercase{Bachelor Thesis}}
+
+\def
+\keywords{\nohyphens{
+    \MISSING{Keyword 1, Keyword 2, Keyword 3, ...}
+}}
+
+\def
+\papertype{Bachelor Thesis\ }
+
+\def
+\supervisors{
+    \MISSING{NAME 1} \\ 
+    \MISSING{NAME 2} \\ 
+    \MISSING{NAME 3}
+}
+
+\def
+\addressUNIONE{
+    \MISSING{ADRESS 1}
+}
+
+\def
+\addressUNITWO{
+    \MISSING{ADRESS 2}
+}
+
+%%% COMMANDS
+
+\newcommand{\ea}[1]{#1 \textit{et al.}}
+
+\newcommand{\tab}{
+    \hspace{2em}
+}
+
+\newcommand{\makeemptypage}{
+    \clearpage
+    \thispagestyle{empty}
+    \null
+    \newpage
+}
+
+\providecommand{\microsection}[2]
+{
+    \small	
+    \textbf{#1 |} \textit{#2}
+}
+
+\providecommand{\paragraphheader}[1]
+{
+    \par\bigskip\indent\textit{\textbf{#1 |}}
+}
+
+\newcommand{\smallcap}[1]{
+    \captionsetup{font=footnotesize}
+    \caption{#1}
+}
+
+\newenvironment{kurzfassung}{
+    \renewcommand{\abstractname}{Kurzfassung}
+    \begin{abstract}
+}{
+    \renewcommand{\abstractname}{Abstract}
+    \end{abstract}
+}
+
+\newcommand{\skippages}[1]{%
+  \begingroup
+  \newcount\pages
+  \pages=#1
+  \loop
+    \null\newpage
+    \advance\pages by -1
+    \ifnum\pages>0
+  \repeat
+  \endgroup
+}
+
+\DeclareMathOperator{\sgn}{sgn}

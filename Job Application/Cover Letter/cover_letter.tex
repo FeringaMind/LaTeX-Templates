@@ -1,0 +1,58 @@
+\documentclass[10pt, letterpaper]{article}
+
+%%% Packages
+\usepackage[top=0.5in, bottom=0.5in, left=0.5in, right=0.5in]{geometry} % page margins
+\usepackage[T1]{fontenc} % better font-encoding compatability
+\usepackage[utf8]{inputenc} % correct utf8 font encoding
+\usepackage{times} % times new roman font
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage[%
+    filename,%
+    ]{draftfigure}
+
+\input{../application.tex}
+
+%%% Preample
+\usepackage[pdftex,
+    pdfauthor={NAME},
+    pdftitle={Cover Letter - NAME},
+    pdfsubject={Cover Letter},
+    pdfkeywords={TAGS},
+    hidelinks
+]{hyperref} % Add info to the PDF
+\pagestyle{empty} % Remove the numbering
+
+%%% Document
+\begin{document}
+    \HEAD
+    \vspace{-3em}
+    \LINE \\ \\
+    \textbf{\today} \\ \\ \\
+    \MISSING{PERSON} \\
+    \MISSING{COMPANY} \\
+    \MISSING{STREET} \\
+    \MISSING{CITY} \\ \\ \\
+
+    %%% CONTENT
+    \noindent Dear \MISSING{PERSON}, \\
+
+    \noindent \MISSING{Paragraph} \\
+
+    \noindent \MISSING{Paragraph} \\
+
+    \noindent \MISSING{Paragraph} \\
+
+    \noindent \MISSING{Paragraph} \\
+
+    \noindent \MISSING{Paragraph} \\ \\
+
+    %%% Signature
+    \noindent 
+    Sincerely,
+    \begin{figure}[!ht]
+        \includegraphics[draft]{signature.pdf}
+    \end{figure} \\
+    \MISSING{NAME}
+\end{document}

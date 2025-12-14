@@ -1,0 +1,144 @@
+\documentclass[onecolumn, oneside, 12pt]{article}
+\usepackage[a4paper, inner=3.5cm, outer=2.5cm, top=2.5cm, bottom=2.5cm]{geometry}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{algorithmicx}
+\usepackage{textcomp}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{lipsum}
+\usepackage{cuted}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+\usepackage[backend=biber, style=vancouver, sorting=none]{biblatex}
+    \addbibresource{bibtex.bib}
+\usepackage{acro}
+    \input{Pages/Definitions/acronyms.tex}
+    \acsetup{make-links}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{svg}
+\usepackage{hyphenat} % remove hypheneation at custom regoins
+\usepackage[final,nopatch=footnote]{microtype}
+\usepackage{multirow}
+\usepackage{xfrac}
+\usepackage{float}
+\usepackage{paper}
+\usepackage{minted}
+\usepackage{rotating}
+\usepackage[%
+    filename,%
+    ]{draftfigure}
+
+
+% papervars setup
+\title{\papertitle}
+\author{\authors}
+\date{}
+
+% Header and Footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[OR]{{\footnotesize\MakeUppercase\leftmark \tab \thepage}}
+\renewcommand{\headrulewidth}{0pt}
+\makeatletter
+\makeatother
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\setlength{\headheight}{15pt}
+
+%%% Used to also count smallcap words toward the total word count
+%TC:floatinclude \smallcap [otherword]
+
+%%% MAIN DOCUMENT
+\begin{document}
+%TC:ignore
+\include{Pages/Document/Titlepage.tex}  %%% Title Page
+
+% set correct formatting options
+\singlespacing
+\restoregeometry
+    
+% clear one page after the titlepage and set the numbering to roman for the toc etc.
+\makeemptypage
+\pagenumbering{roman}
+
+\include{Pages/Document/EidesstattlicheErklaerung.tex}      %%% Eidesstattliche Erkläsung
+%TC:endignore
+
+\include{Pages/Content/Abstract.tex}                        %%% Abstract
+
+%TC:ignore
+\setcounter{tocdepth}{3}                                %%% Set what should be included in the ToC and what not
+\tableofcontents                                        %%% ToC
+\clearpage
+%TC:endignore
+
+
+% Reset page numbering to arabic
+\clearpage
+\pagenumbering{arabic}
+
+%%% Content
+\section{Introduction}
+    \input{Pages/Content/Introduction.tex}
+
+\clearpage
+\section{Problem and Motivation}
+    \label{sec:Problem_And_Motivation}
+    \input{Pages/Content/Problem_And_Motivation.tex}
+
+\clearpage
+\section{Background, Structure and Principle}
+    \label{sec:Background_Structure_and_Principle}
+    \input{Pages/Content/Background_Structure_and_Principle.tex}
+
+\clearpage
+\section{Material and Methods}
+    \label{sec:Material_and_Methods}
+    \input{Pages/Content/Material_and_Methods.tex}
+
+\clearpage
+\section{Results}
+    \label{sec:Results}
+    \input{Pages/Content/Results.tex}
+
+\clearpage
+\section{Discussion}
+    \subsection{Evaluation}
+        \label{sec:Evaluation}
+        \input{Pages/Content/Evaluation.tex}
+    \subsection{Conclusion}
+        \label{sec:Conclusion}
+        \input{Pages/Content/Conclusion.tex}
+
+\clearpage
+\section{Outlook}
+    \label{sec:Outlook}
+    \input{Pages/Content/Outlook.tex}
+
+%TC:ignore
+\clearpage
+\appendix
+    \section{Additional Section}
+        \label{app:Additional_Section}
+        \input{Pages/Appendix/Additional_Section.tex}
+
+
+%%% Glossary Page
+\clearpage
+\phantomsection
+\markboth{Acronyms and Nomenclature}{Acronyms and Nomenclature}
+\printacronyms
+\addcontentsline{toc}{section}{Acronyms and Nomenclature}
+
+
+%%% Bibliography Page
+\clearpage
+\renewcommand{\bibfont}{\normalfont} %\footnotesize
+\nocite{*}
+\printbibliography
+\phantomsection
+\addcontentsline{toc}{section}{References}
+%TC:endignore
+
+\end{document}

@@ -1,0 +1,42 @@
+\singlespacing      %%% Set line spacing to one for the title page
+\newgeometry{top=2.5cm,bottom=2.5cm,left=2.5cm,right=2.5cm}
+
+\begin{figure}
+    \includegraphics[draft, width=3cm, height=2cm]{Logo/UNI_LOGO_1.pdf}
+    \hfill
+    \includegraphics[draft, width=3cm, height=2cm]{Logo/UNI_LOGO_2.pdf}
+\end{figure}
+\maketitle % Inserts the title
+
+\vfill
+
+\begin{center}
+    {\normalsize \MISSING{PLACE}, \submitmonth \MISSING{YEAR}}
+\end{center}
+
+\vfill
+
+% supervisors
+\begin{center}
+    \centering
+    {\large\textbf{supervised by:}}
+    \\[1em]
+    \supervisors
+\end{center}
+
+% Adresses
+\noindent\centerline{\rule{\textwidth}{0.5pt}}
+\vspace{0.5em}
+{\scriptsize
+\noindent\begin{minipage}[t]{0.4\textwidth}
+    \raggedright
+    \addressUNIONE
+\end{minipage}
+\hfill
+\noindent\begin{minipage}[t]{0.4\textwidth}
+    \raggedright
+    \addressUNITWO
+\end{minipage}}
+
+% Remove page numberings
+\thispagestyle{empty} 

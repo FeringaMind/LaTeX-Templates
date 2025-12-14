@@ -1,0 +1,24 @@
+\usepackage{xcolor}
+
+\def \HEAD
+{\begin{center}
+        {\huge \textbf{\MISSING{NAME}}} \\ \vspace{1em}
+        \MISSING{LOCATION} \ | \ 
+        \MISSING{...} \ | \
+        \href{tel:PHONE}{\MISSING{PHONE}} \ | \
+        \href{https://www.linkedin.com/in/USERNAME}{\MISSING{LinkedIn}} \ | \ 
+        \href{https://github.com/USERNAME}{\MISSING{GitHub}} \ | \
+        \href{mailto:EMAIL}{\MISSING{EMAIL}} 
+    \end{center}
+
+    \vspace{3em}}
+
+\def \LINE
+{\noindent\rule{\linewidth}{1pt} \\[0.5em]}
+
+\newcommand{\HEADING}[1]
+{{\noindent \Large \textbf{#1}} \\[-0.5em]
+    \LINE}
+
+\newcommand{\MISSING}[1]
+{\textcolor{red}{#1}}
